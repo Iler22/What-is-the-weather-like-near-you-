@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Weather Dashboard</title>
+</head>
+
+<body>
+    <header class="jumbotron jumbotron-fluid custom-jumbotron">
+        <div class="container text-center">
+            <h1 class=>Weather Dashboard</h1>
+    </header>
+
+    <main class="container-fluid">
+        <form>
+            <div class="row">
+                <div class="col-3">
+                    <label for="inputCity" class="inputCity">Search for a City:</label>
+                    <input type="text" class="form-control-lg searchCity" id="inputCity" placeholder="Manchester" />
+                    <button class="submit btn btn-primary btn-lg" type="submit">Search</button>
+                </div>
+        </form>
+
+        <section class="col-9 currentDay">col-8</section>
+
+
+
+    </main>
+    <script type="module" src="./dashboard.js"></script>
+    <script type="module" src="./js/fetchData.js"></script>
+</body>
+</html>
