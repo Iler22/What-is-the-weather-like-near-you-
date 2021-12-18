@@ -19,16 +19,16 @@
   height: 100vh;
 }
 
-.inputCity {
+.input-city {
   font-size: 32px;
   font-weight: bolder;
 }
 
 .btn-lg {
+  display: flex;
   margin-top: 1rem;
-  padding: 5px;
-  height: 2.75rem;
   width: 16.25rem;
+  justify-content: center;
 }
 
 section {

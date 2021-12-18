@@ -1,5 +1,4 @@
-import { renderWeatherUrl } from "./utils/renderWeatherUrl"
-import { fetchData } from "./fetchData";
+
 
 
 const submitBtn = document.querySelector('btn.submit');

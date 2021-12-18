@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="./CSS/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <title>Weather Dashboard</title>
 </head>
 
@@ -20,8 +21,8 @@
         <form>
             <div class="row">
                 <div class="col-3">
-                    <label for="inputCity" class="inputCity">Search for a City:</label>
-                    <input type="text" class="form-control-lg city" id="inputCity" placeholder="Manchester" />
+                    <label for="input-city" class="input-city">Search for a City:</label>
+                    <input type="text" class="form-control-lg city" id="input-city" placeholder="Manchester" />
                     <button class="submit btn btn-primary btn-lg" type="submit">Search</button>
                <div class="search-container">
                     <button class="clear btn btn-primary btn-lg">Clear</button>
@@ -30,7 +31,7 @@
         </form>
 
         <section class="col-9 hidden">
-            <div class="currentDay"></div>
+            <div class="weather-today"></div>
             <div class="forecast"></div>
         </section>
         
