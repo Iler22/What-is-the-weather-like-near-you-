@@ -22,7 +22,9 @@ const locationData = {
     uvi: 'uv index'
 }
 
-
+searchContainerEl = document.createElement("button");
+searchContainerEl.innerHTML = "";
+document.body.appendChild(btn);
 
 
 
