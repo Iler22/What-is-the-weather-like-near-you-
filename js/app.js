@@ -1,6 +1,3 @@
-
-
-
 const submitBtn = document.querySelector('btn.submit');
 const form = document.querySelector('.form');
 const locationEl = document.querySelector('input.city');
@@ -30,7 +27,3 @@ let searchCity = [];
 //     } catch (error) {
 //         console.log(error);
 //     }
-// }
-
-
-

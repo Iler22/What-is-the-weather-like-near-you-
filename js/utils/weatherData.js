@@ -1,15 +1,13 @@
-// This function renders weather conditions for a given city
 import { fetchData } from "./fetchData";
 
 const apiKey = '9030173b33ec8f0bcf39ab0fa1199320';
 
 export async function currentWeatherData(city){
-    const currentWeatherURL= `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`;
+    const currentWeatherURL= `https://api.openweathermap.org/data/2.5/weather?q=Manchester&units=imperial&appid=${apiKey}`;
     const data = await fetchData(currentWeatherURL);
     return data.coord;
+    // console.log(data)
 }
-
-
 
 
 export async function forecastWeatherData(city){
@@ -27,5 +25,5 @@ export async function forecastWeatherData(city){
 //     console.log('finished')
 // }
 
-// postCurrentWeather()
+// // postCurrentWeather()
 
