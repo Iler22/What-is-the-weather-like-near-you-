@@ -6,7 +6,7 @@ const form = document.querySelector('.form');
 const locationEl = document.querySelector('input.city');
 const weatherToday = document.querySelector('weather-today');
 const sectionEl = document.querySelector('.section')
-const searchContainerEl = document.querySelector('.searchContainer')
+var searchContainerEl = document.querySelector('.searchContainer')
 
 
 // let searchCity = [];
@@ -22,9 +22,9 @@ const locationData = {
     uvi: 'uv index'
 }
 
-searchContainerEl = document.createElement("button");
-searchContainerEl.innerHTML = "";
-document.body.appendChild(btn);
+// searchContainerEl = document.createElement("button");
+// searchContainerEl.innerHTML = "";
+// document.body.appendChild(btn);
 
 
 
