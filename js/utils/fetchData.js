@@ -1,7 +1,7 @@
-export async function fetchData(URL) {
-    const response = await fetch(URL);
-    return data
-}
+// export async function fetchData(URL) {
+//     const response = await fetch(URL);
+//     return data
+// }
 
 
 

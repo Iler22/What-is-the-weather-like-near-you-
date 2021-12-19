@@ -7,6 +7,18 @@ let searchCity = [];
 
 
 
+async function displayWeather() {
+  const date = moment().format("MM/DD/YY");
+  weatherToday.innerHTML = `
+  <h2>${location}, ${date}<h2>
+  <p>${location.main.temp}<p>
+  <p>${location.main.humidity}<p>
+  <p>${location.wind}<p>
+  <p>${location.uvi}                      
+  `;
+}
+
+
 // console.log(coords.value)
 // form.addEventListener('submit', async function (e) {
 //         e.preventDefault();
