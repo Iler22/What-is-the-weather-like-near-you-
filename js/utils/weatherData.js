@@ -17,26 +17,59 @@ const locationData = {
     uvi: 'uv index'
 }
 
-async function currentWeatherData(city) {
+async function currentWeatherData() {
     const currentWeatherURL = `https://api.openweathermap.org/data/2.5/weather?q=Manchester&units=imperial&appid=${apiKey}`;
     const response = await fetch(currentWeatherURL);
     const data = await response.json()
-    const lon = data.coord.lon;
-    const lat = data.coord.lat;
-    console.log(lon)
-    console.log(lat)
+    // const lon = data.coord.lon
+    // const lat = data.coord.lat
+    // console.log(lon)
+    // console.log(lat)
+    return data
 }    
 
 
 async function forecastWeatherData() {
-    const forecastWeatherURL = `https://api.openweathermap.org/data/2.5/forecast?q=London&appid=${apiKey}`;
-    const response = await fetch(forecastWeatherURL);
+    const forecastWeatherURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`;
+    const response = await fetch(forecastWeatherURL)
     const data = await response.json()
-    const location = data.name
-    console.log(location)
+    // const location = data.city.name
+    // console.log(location)
+    return data
+}
+
+async function getWeatherData() {
+const city = await forecastWeatherData();
+console.log(city);
+const coord = await currentWeatherData();
+console.log(coord);
+displayWeather(city, coord)
 }
 
 
+// var myVar = displayWeather(city, coord);
+// console.log(myVar)
+// function displayWeather(city, coord) {
+//     const weatherToday = city.name;
+//     const forecastWeather = coord;
+
+// }
+
+function displayWeather({ wind, temp, humidity, uvi}, city) {
+    const date = moment().format("MM/DD/YY");
+    weatherToday.innerHTML = `
+    <h2>${city}, ${date}<h2>
+    <ul>
+    <li>${temp}</li>
+    <li>${humidity}</li>
+    <li>${wind}</li>
+    <li>${uvi}</li>                   
+    </ul>
+    `;
+  }
+
+  
+//   console.log(displayWeather())
 // console.log(forecastWeatherData())
 // const postCurrentWeather = async () => {
 //     const fetchData = getCurrentWeatherData();
@@ -49,11 +82,12 @@ async function forecastWeatherData() {
 
 const submitFunction = function (event) {
     event.preventDefault();
-    location.name = input.city;
+    locationEl.value = city.name;
     main.classList.remove("hidden");
+}
 
-submitBtn.addEventListener("click", submitFunction)}
+submitBtn.addEventListener("click", submitFunction)
 
-currentWeatherData()
-forecastWeatherData()
+
+
 // displayWeather()
