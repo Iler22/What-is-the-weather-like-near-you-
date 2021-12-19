@@ -1,7 +1,7 @@
 # What-is-the-weather-like-near-you-
 
 This project is a weather dashboard app
-Live demo [_here_](https://aidkool.github.io/jobs-finder/).
+Live demo [_here_](https://iler22.github.io/What-is-the-weather-like-near-you-/).
 
 ## Table of Contents
 
