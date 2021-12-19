@@ -1,8 +1,13 @@
 // import { fetchData } from "./fetchData";
-const submitBtn = document.querySelector('btn.submit');
+var city = 'city';
+var coord = 'coord';
+const submitBtn = document.querySelector('.submit.btn');
 const form = document.querySelector('.form');
 const locationEl = document.querySelector('input.city');
 const weatherToday = document.querySelector('weather-today');
+const sectionEl = document.querySelector('.section')
+const searchContainerEl = document.querySelector('.searchContainer')
+
 
 // let searchCity = [];
 
@@ -17,6 +22,12 @@ const locationData = {
     uvi: 'uv index'
 }
 
+
+
+
+
+
+
 async function currentWeatherData() {
     const currentWeatherURL = `https://api.openweathermap.org/data/2.5/weather?q=Manchester&units=imperial&appid=${apiKey}`;
     const response = await fetch(currentWeatherURL);
@@ -26,7 +37,7 @@ async function currentWeatherData() {
     // console.log(lon)
     // console.log(lat)
     return data
-}    
+}
 
 
 async function forecastWeatherData() {
@@ -39,11 +50,11 @@ async function forecastWeatherData() {
 }
 
 async function getWeatherData() {
-const city = await forecastWeatherData();
-console.log(city);
-const coord = await currentWeatherData();
-console.log(coord);
-displayWeather(city, coord)
+    city = await forecastWeatherData();
+    console.log(city);
+    coord = await currentWeatherData();
+    console.log(coord);
+    displayWeather(city, coord)
 }
 
 
@@ -55,7 +66,7 @@ displayWeather(city, coord)
 
 // }
 
-function displayWeather({ wind, temp, humidity, uvi}, city) {
+function displayWeather({ wind, temp, humidity, uvi }, city) {
     const date = moment().format("MM/DD/YY");
     weatherToday.innerHTML = `
     <h2>${city}, ${date}<h2>
@@ -66,9 +77,9 @@ function displayWeather({ wind, temp, humidity, uvi}, city) {
     <li>${uvi}</li>                   
     </ul>
     `;
-  }
+}
 
-  
+
 //   console.log(displayWeather())
 // console.log(forecastWeatherData())
 // const postCurrentWeather = async () => {
@@ -82,8 +93,8 @@ function displayWeather({ wind, temp, humidity, uvi}, city) {
 
 const submitFunction = function (event) {
     event.preventDefault();
-    locationEl.value = city.name;
-    main.classList.remove("hidden");
+    city = locationEl.value;
+    sectionEl.classList.remove("hidden");
 }
 
 submitBtn.addEventListener("click", submitFunction)
