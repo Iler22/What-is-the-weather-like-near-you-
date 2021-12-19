@@ -68,15 +68,15 @@ async function getWeatherData() {
 
 // }
 
-function displayWeather({ wind, temp, humidity, uvi }, city) {
+function displayWeather({  temp, humidity, wind, uvi }, city) {
     const date = moment().format("MM/DD/YY");
     weatherToday.innerHTML = `
     <h2>${city}, ${date}<h2>
     <ul>
-    <li>${temp}</li>
-    <li>${humidity}</li>
-    <li>${wind}</li>
-    <li>${uvi}</li>                   
+    <li>temp: ${temp} °c</li>
+    <li>humidity: ${humidity}</li>
+    <li>wind: ${wind}</li>
+    <li>uvi: ${uvi}</li>                   
     </ul>
     `;
 }
@@ -97,10 +97,10 @@ const submitFunction = function (event) {
     event.preventDefault();
     city = locationEl.value;
     sectionEl.classList.remove("hidden");
+    displayWeather()
 }
 
 submitBtn.addEventListener("click", submitFunction)
 
 
 
-// displayWeather()
